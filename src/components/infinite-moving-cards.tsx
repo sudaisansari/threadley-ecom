@@ -5,6 +5,11 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "@/components/ProductCard";
 import { productsData } from "@/components/products";
 
+const getProducts = () => {
+    const data = productsData;
+    return data.filter((products) => products.type === "polo" || products.type === "tee")
+}
+
 export const InfiniteMovingCards = ({
     direction = "left",
     speed = "fast",
@@ -16,6 +21,7 @@ export const InfiniteMovingCards = ({
     pauseOnHover?: boolean;
     className?: string;
 }) => {
+
     const containerRef = React.useRef<HTMLDivElement>(null);
     const scrollerRef = React.useRef<HTMLUListElement>(null);
 
@@ -65,6 +71,7 @@ export const InfiniteMovingCards = ({
             }
         }
     };
+    const products = getProducts();
     return (
         <div
             ref={containerRef}
@@ -81,7 +88,7 @@ export const InfiniteMovingCards = ({
                     pauseOnHover && "hover:[animation-play-state:paused]"
                 )}
             >
-                {productsData.map((product) => (
+                {products.map((product) => (
                     <div key={product.id}>
                         <ProductCard
                             id={product.id}
@@ -90,6 +97,7 @@ export const InfiniteMovingCards = ({
                             price={product.price}
                             category={product.category}
                             description={product.description}
+                            type={"tee"}
                         />
                     </div>
                 ))}

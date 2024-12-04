@@ -20,7 +20,6 @@ const Items = [
         ],
         Contact: [
             "Whatsapp",
-            "Support 24h"
         ]
     }
 ]
@@ -29,7 +28,7 @@ const Items = [
 const Footer = () => {
     return (
         <footer>
-                <div className='mt-7 mb-5 mx-4 md:mx-0 bottom-0'>
+                <div className='mt-10 mb-5 mx-4 md:mx-0 bottom-0'>
                     {/* Upper Side */}
                     <div className='flex flex-col md:flex-row space-y-5 md:space-y-0 justify-evenly'>
                         {/* Logo & links */}
@@ -115,11 +114,11 @@ const Footer = () => {
                         <div className='flex flex-col md:flex-row justify-evenly md:space-x-2 lg:space-x-0 space-y-2 md:space-y-0'>
                             <h5 className='text-lg'>Copyright © 2025 Threadley</h5>
                             <div>
-                                <h5 className='text-lg'>Design by.</h5>
+                                <h5 className='text-lg'>Design by</h5>
                                 <h5 className='font-bold text-lg'>M Sudais Ansari</h5>
                             </div>
                             <div>
-                                <h5 className='text-lg'>Code by.</h5>
+                                <h5 className='text-lg'>Code by</h5>
                                 <h5 className='font-bold text-lg'>sudaisansari on github</h5>
                             </div>
                         </div>

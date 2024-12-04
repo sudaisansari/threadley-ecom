@@ -23,17 +23,17 @@ const ProductCard: React.FC<Products> = ({
                         style={{ objectPosition: 'top', transition: 'transform 0.3s ease' }}
                     />
                 </div>
-
-                <div className='mb-1 mt-1 mx-[1px]'>
-                    <p className='font-bold text-xl italic'>{title}</p>
-                </div>
-
-                <div className='w-24 mx-auto rounded-t-md animate-slide-up'>
-                    <p>
-                        $<span className='text-2xl mx-1 font-semibold'>{price}</span>
-                    </p>
-                </div>
             </Link>
+
+            <div className='mb-1 mt-1 mx-[1px]'>
+                <p className='font-bold text-xl italic'>{title}</p>
+            </div>
+
+            <div className='w-24 mx-auto rounded-t-md animate-slide-up'>
+                <p>
+                    Rs<span className='text-2xl mx-1 font-semibold'>{price}</span>
+                </p>
+            </div>
         </div>
 
     )

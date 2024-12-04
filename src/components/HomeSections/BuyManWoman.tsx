@@ -15,7 +15,7 @@ const BuyManWoman = () => {
                     className="group-hover:scale-110"
                 />
                 <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center'>
-                    <Button name='Shop Men' link='/Men' />
+                    <Button name='Shop Men' link='/men' />
                 </div>
             </div>
             <div className='h-[600px] md:w-2/5 w-full relative overflow-hidden group'>
@@ -28,7 +28,7 @@ const BuyManWoman = () => {
                     className="group-hover:scale-110"
                 />
                 <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center'>
-                    <Button name='Shop Women' link='/Women' />
+                    <Button name='Shop Women' link='/women' />
                 </div>
             </div>
         </div>

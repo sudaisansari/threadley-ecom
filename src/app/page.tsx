@@ -1,13 +1,13 @@
 import BuyManWoman from "@/components/HomeSections/BuyManWoman";
 import Hero from "@/components/HomeSections/Hero";
-import Hoodies from "@/components/HomeSections/Hoodies";
+import HoodieTrouser from "@/components/HomeSections/HoodieTrouser";
 import { InfiniteMovingCardsDemo } from "@/components/HomeSections/MovingCards";
 
 export default function Home() {
   return (
     <div>
       <Hero />
-      <Hoodies />
+      <HoodieTrouser />
       <BuyManWoman />
       <InfiniteMovingCardsDemo />
     </div>
