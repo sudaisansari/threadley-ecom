@@ -1,31 +1,12 @@
 import { InfiniteMovingCards } from '@/components/infinite-moving-cards';
-import ParticularProduct from '@/components/ParticularProduct';
+import ParticularProductClient from '@/components/ParticularProductClient';
 import ProductInstaruction from '@/components/ProductInstaruction';
-import { productsData } from '@/components/products';
 
-const getProductsDetails = (id: string) => {
-    const data = productsData;
-    return data.filter((product) => product.id == id)
-}
-
-const page = ({ params }: { params: { id: string } }) => {
-    // console.log("id", params.id)
-    const result = getProductsDetails(params.id);
-
+const page = async ({ params }: { params: { id: string } }) => {
+    const param = await params.id
     return (
         <div>
-            <div className="flex flex-wrap items-center justify-center md:py-6">
-                {result.map((product) => (
-                    <ParticularProduct
-                        id={product.id}
-                        key={product.id}
-                        title={product.title}
-                        price={product.price}
-                        image={product.image}
-                        description={product.description}
-                    />
-                ))}
-            </div>
+            <ParticularProductClient id={param} />
             {/* Product Instrn */}
             <ProductInstaruction />
             {/* Recommended Products */}

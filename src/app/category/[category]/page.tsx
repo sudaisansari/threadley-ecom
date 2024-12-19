@@ -1,18 +1,16 @@
-import AllProducts from "@/components/AllProducts";
-import { productsData } from "@/components/products";
+import CategoryClient from "@/components/CategoryClient";
 
-const getProductsByCategory = (category: string) => {
-  const data = productsData;
-  return data.filter((products) => products.category === category)
-}
+// const getProductsByCategory = (category: string) => {
+//   const data = productsData;
+//   return data.filter((products) => products.category === category)
+// }
 
 const page = ({ params }: { params: { category: string } }) => {
-  // console.log("Cat : ", params.category)
-  const result = getProductsByCategory(params.category);
-  // console.log("Res : ", result)
+  // const result = getProductsByCategory(params.category);
   return (
     <div>
-      <AllProducts productsData={result} />
+      {/* <AllProducts productsData={result} /> */}
+      <CategoryClient category={params.category} />
     </div>
   )
 }

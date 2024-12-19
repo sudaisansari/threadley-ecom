@@ -1,11 +1,10 @@
-import AllProducts from "@/components/AllProducts";
-import { productsData } from "@/components/products";
+import ProductClient from "@/components/ProductClient";
 
-const page = () => {
-
+const page = () => {    
     return (
         <div>
-            <AllProducts productsData={productsData} />
+            <ProductClient />
+            {/* <AllProducts productsData={productsData} /> */}
         </div>
     )
 }

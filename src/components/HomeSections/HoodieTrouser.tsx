@@ -27,8 +27,8 @@ const HoodieTrouser = () => {
                     </div>
                 </div>
                 <div className='h-[400px] md:w-1/2 overflow-hidden group relative'>
-                    <Link href="/product/1001">
-                        <Image src="/hoodies/h6.webp" alt="hoodie" fill objectFit='cover' style={{ objectPosition: 'top', transition: 'transform 0.3s ease' }} className="group-hover:scale-105" />
+                    <Link href="/product/1003">
+                        <Image src="https://res.cloudinary.com/dkd9ojziw/image/upload/v1734460853/h7_gu9dls.webp" alt="hoodie" fill objectFit='cover' style={{ objectPosition: 'center', transition: 'transform 0.3s ease' }} className="group-hover:scale-105" />
                     </Link>
                 </div>
             </div>
@@ -36,7 +36,7 @@ const HoodieTrouser = () => {
                 <div className='h-[400px] md:w-1/2 overflow-hidden group relative'>
                     <Link href={"/product/1010"}>
                         <Image
-                            src="/trousers/t2.webp"
+                            src="https://res.cloudinary.com/dkd9ojziw/image/upload/v1734460393/t2_mtqezl.webp"
                             alt="hoodie"
                             fill
                             objectFit='cover'

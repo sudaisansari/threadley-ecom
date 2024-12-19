@@ -1,23 +1,34 @@
 "use client"
 import ProductCard from "@/components/ProductCard";
-import { useState } from "react";
+import { fetchProductsRealTime } from "@/config/firebase";
+import { setProductsData } from "@/store/slice";
+import { Products } from "@/types/types";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 
 interface AllProductsProps {
-    productsData: Array<{
-        id: string;
-        title: string;
-        price: string;
-        image: string;
-        category: 'men' | 'women';
-        description: string;
-        type: 'tee' | 'hoodie' | 'polo' | 'trouser';
-    }>;
+    productsData: Products[]
 }
 
 const AllProducts = ({ productsData }: AllProductsProps) => {
     const [type, setType] = useState<null | 'tee' | 'hoodie' | 'polo' | 'trouser'>(null);
-
     const filteredProducts = type ? productsData.filter(product => product.type === type) : productsData;
+
+    const dispatch = useDispatch();
+    const [products, setProducts] = useState<Products[]>([]);
+    useEffect(() => {
+        const unsubscribe = fetchProductsRealTime((fetchedProducts) => {
+            console.log("Fetched products Db: ", fetchedProducts);
+            setProducts(fetchedProducts); // Update local state
+            dispatch(setProductsData(fetchedProducts)); // Dispatch the updated data to Redux
+        });
+        return () => {
+            if (unsubscribe) {
+                unsubscribe();
+            }
+        };
+    }, [dispatch]);
+    console.log("All Prods :", products)
 
     return (
         <div>
@@ -69,6 +80,7 @@ const AllProducts = ({ productsData }: AllProductsProps) => {
                                 id={product.id}
                                 category={product.category}
                                 type={product.type}
+                                quantity={product.quantity}
                             />
                         )) :
                         <p className='font-bold text-2xl'>No Products Found</p>
